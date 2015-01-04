@@ -30,7 +30,6 @@ http.createServer(function(req, res) {
       return res.end(footer);
     }
 
-    // pipe txt to client
     // we can't use txt.pipe(res); here
     // because we need to output the footer
     // after the txt file has finished
