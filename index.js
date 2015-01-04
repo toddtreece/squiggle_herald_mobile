@@ -1,7 +1,7 @@
 var http = require('http'),
     fs = require('fs'),
     port = process.env.SQUIGGLE_HERALD_MOBILE_PORT || 3000,
-    host = process.env.SQUIGGLE_CITY_MOBILE_HOST || '127.0.0.1';
+    host = process.env.SQUIGGLE_HERALD_MOBILE_HOST || '127.0.0.1';
 
 // grab the template html
 var header = fs.readFileSync('./header.html'),
@@ -9,7 +9,7 @@ var header = fs.readFileSync('./header.html'),
 
 http.createServer(function(req, res) {
 
-  var url = 'http://squiggle.city/~paper/archives/squiggle.city.herald.1.1.txt';
+  var url = 'http://squiggle.city' + req.url;
 
   // set content type
   res.setHeader('Content-Type', 'text/html');
